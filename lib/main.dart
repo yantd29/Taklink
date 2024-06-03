@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'pages/homePage.dart';
-import 'pages/collectionsPage.dart';
-import 'pages/interviewsPage.dart';
-import 'pages/employeesPage.dart';
+import 'views/homePage.dart';
+import 'views/collectionsPage.dart';
+import 'views/interviewsPage.dart';
+import 'views/employeesPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_currentIndex],
@@ -58,14 +57,13 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _currentIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Image.asset('icones/home.png'),
+            icon: Image.asset('icones/home2.png',
+                color: Colors.black), // Add this line
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Image.asset(
               'icones/collection.png',
-              width: 25,
-              height: 25,
               color: Colors.black,
             ),
             label: 'Collection',
@@ -73,8 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'icones/interviews.png',
-              width: 25,
-              height: 25,
               color: Colors.black,
             ),
             label: 'Interviews',
@@ -82,8 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Image.asset(
               'icones/workers.png',
-              width: 25,
-              height: 25,
               color: Colors.black,
             ),
             label: 'Employees',
@@ -91,9 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
 
         unselectedItemColor: Colors.black,
+        unselectedLabelStyle:
+            const TextStyle(fontWeight: FontWeight.w500, fontSize: 11),
         selectedItemColor: const Color.fromRGBO(32, 92, 207, 1),
         selectedLabelStyle:
-            const TextStyle(fontWeight: FontWeight.w500, fontSize: 11),
+            const TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
         backgroundColor: const Color.fromRGBO(244, 244, 244, 1),
       ),
     );
