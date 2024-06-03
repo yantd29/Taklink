@@ -82,7 +82,6 @@ class CollectionsPage extends StatelessWidget {
       children: <Widget>[
         simpleText('Salut tout le monde!'),
         simpleText('Vous etes sur la page des collections'),
-        simpleText('Hello tout le monde!'),
       ],
     );
   }
