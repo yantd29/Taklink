@@ -5,28 +5,26 @@ class CollectionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    var platform = Theme.of(context).platform;
-    print('Size: $size');
-    print('Platform: $platform');
+    var size = MediaQuery.of(context).size; // Récupère la taille de l'écran
 
     return Scaffold(
-      appBar: taklinkAppBar(),
+      appBar: taklinkAppBar(), // Affiche la barre d'applications personnalisée
       body: Container(
         height: (size.height - 0),
         width: size.width,
         color: const Color.fromRGBO(255, 255, 255, 0.5),
         // margin: EdgeInsets.all(10),
         padding: const EdgeInsets.only(top: 100),
-        child: spanDemo(),
+        child: spanDemo(), // Affiche le contenu principal de la page
       ),
     );
   }
 
-  // Mes fonctions
+  // Fonction pour afficher la barre d'applications personnalisée
   taklinkAppBar() {
     return AppBar(
-        title: titreOngletText('My Collections'),
+        title:
+            titreOngletText('My Collections'), // Affiche le titre de l'onglet
         backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
         actions: <Widget>[
           IconButton(
@@ -50,6 +48,7 @@ class CollectionsPage extends StatelessWidget {
         ));
   }
 
+  // Fonction pour afficher un texte simple
   Text simpleText(String text) {
     return Text(
       text,
@@ -63,6 +62,7 @@ class CollectionsPage extends StatelessWidget {
     );
   }
 
+  // Fonction pour afficher le titre de l'onglet
   Text titreOngletText(String text) {
     return Text(
       text,
@@ -76,6 +76,7 @@ class CollectionsPage extends StatelessWidget {
     );
   }
 
+  // Fonction pour afficher une colonne de textes
   Column spanDemo() {
     return Column(
       children: <Widget>[

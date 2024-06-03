@@ -5,20 +5,17 @@ class InterviewsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    var platform = Theme.of(context).platform;
-    print('Size: $size');
-    print('Platform: $platform');
+    var size = MediaQuery.of(context).size; // Récupère la taille de l'écran
 
     return Scaffold(
-      appBar: taklinkAppBar(),
+      appBar: taklinkAppBar(), // Affiche la barre d'applications personnalisée
       body: Container(
         height: size.height,
         width: size.width,
         color: const Color.fromRGBO(255, 255, 255, 0.5),
         // margin: EdgeInsets.all(10),
         padding: const EdgeInsets.only(top: 100),
-        child: spanDemo(),
+        child: spanDemo(), // Affiche une colonne de texte
       ),
 
       // appBar: AppBar(
@@ -29,23 +26,25 @@ class InterviewsPage extends StatelessWidget {
 
   taklinkAppBar() {
     return AppBar(
-        title: titreOngletText('My Interviews'),
+        title: titreOngletText(
+            'My Interviews'), // Affiche le titre de la barre d'applications
         backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
         actions: <Widget>[
           IconButton(
-            icon: Image.asset('icones/magnifier.png'),
+            icon: Image.asset(
+                'icones/magnifier.png'), // Affiche une icône de loupe
             color: Colors.white,
             onPressed: () {},
           ),
           IconButton(
-            icon: Image.asset('icones/bell.png'),
+            icon: Image.asset('icones/bell.png'), // Affiche une icône de cloche
             color: Colors.white,
             onPressed: () {},
           ),
         ],
         leading: IconButton(
           icon: const Icon(
-            Icons.menu,
+            Icons.menu, // Affiche une icône de menu
             size: 30,
           ),
           color: Colors.white,
@@ -82,9 +81,8 @@ class InterviewsPage extends StatelessWidget {
   Column spanDemo() {
     return Column(
       children: <Widget>[
-        simpleText('Salut tout le monde!'),
+        simpleText('Salut tout le monde!'), // Affiche un texte simple
         simpleText('Vous etes sur la page des interviews'),
-        simpleText('Hello tout le monde!'),
       ],
     );
   }

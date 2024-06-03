@@ -8,10 +8,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    var platform = Theme.of(context).platform;
-    print('Size: $size');
-    print('Platform: $platform');
+    var size = MediaQuery.of(context).size; // Récupère la taille de l'écran
 
     return GestureDetector(
       onTap: () {
@@ -20,15 +17,16 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            homeAppBar(),
-            homeSearchBar(),
+            homeAppBar(), // Affiche la barre d'applications personnalisée
+            homeSearchBar(), // Affiche la barre de recherche personnalisée
             Expanded(
               child: Container(
                 height: size.height,
                 width: size.width,
                 color: const Color.fromRGBO(255, 255, 255, 0.5),
                 padding: const EdgeInsets.all(15.0),
-                child: spanDemo(),
+                child:
+                    spanDemo(), // Affiche le contenu principal de la page d'accueil
               ),
             ),
           ],
@@ -39,7 +37,9 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CreateJob()),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          CreateJob()), // Navigue vers la page de création d'emploi
                 );
               },
               backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
 
   homeAppBar() {
     return AppBar(
-        title: titreOngletText('TAKLINK'),
+        title: titreOngletText('TAKLINK'), // Affiche le titre de l'onglet
         backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
         actions: <Widget>[
           IconButton(
@@ -147,7 +147,6 @@ class HomePage extends StatelessWidget {
       children: <Widget>[
         simpleText('Salut tout le monde!'),
         simpleText('vous etes sur la page d\'accueil'),
-        simpleText('Hello tout le monde!'),
       ],
     );
   }
