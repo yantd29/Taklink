@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'createJobPage.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
@@ -32,18 +33,19 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
-
         floatingActionButton: Container(
             margin: const EdgeInsets.only(bottom: 30),
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateJob()),
+                );
+              },
               backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
               shape: const CircleBorder(),
               child: const Icon(Icons.add, color: Colors.white, size: 40),
-            )
-        ),
-
-
+            )),
       ),
     );
   }
@@ -56,8 +58,10 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(32, 92, 207, 1),
         actions: <Widget>[
           IconButton(
-            icon:
-            Image.asset('icones/magnifier.png', color: Colors.white,),
+            icon: Image.asset(
+              'icones/magnifier.png',
+              color: Colors.white,
+            ),
             color: Colors.white,
             onPressed: () {},
           ),
@@ -87,8 +91,14 @@ class HomePage extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(30.0)),
             borderSide: BorderSide(color: Colors.black, width: 2),
           ),
+
           hintText: 'Search Job here',
-          prefixIcon: Image.asset('icones/magnifier.png', color: Colors.black, width: 15, height: 15,),
+          prefixIcon: Image.asset(
+            'icones/magnifier.png',
+            color: Colors.black,
+            width: 15,
+            height: 15,
+          ),
           suffixIcon: IconButton(
               icon: const Icon(Icons.clear),
               onPressed: () {
